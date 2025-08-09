@@ -97,12 +97,13 @@ function confirmAck(
 - Green (Phase 1): Data upload and pending state
 - Yellow (Phase 2): ACK challenge & signed ACK return
 - Blue (Phase 3): Data retrieval & decryption
+
 ![OLE Settlement Flow Diagram](OLESettlementFlow.png)
 
 ## Payment Model
 - Escrowed Payment: Upon submitPayload, payment is locked in escrow.
 - Release Trigger: On confirmAck, escrow is released to Relay.
-- Failed ACK: If confirmAck is not received within timeout, payment is not released.
+- Failed ACK: If confirmAck is not received within timeout, payment is not released and data is locked.
 
 ## Security Considerations
 - All cryptographic operations should use audited libraries.
